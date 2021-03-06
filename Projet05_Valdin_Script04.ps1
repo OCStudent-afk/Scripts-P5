@@ -2,7 +2,7 @@
 # Script de sauvegarde nocturne et quotidienne des documents des utilisateurs du domaine
 # AUTHEUR: Valdin Laurie, ACME Group
 # DATE: 01/03/2021
-# VERSION 1.0
+# VERSION 1.1
 
 Copy-Item -Path "\\POSTEW10\Users\Albert\Documents" -Destination "\\SERVEUR-CPD\Albert" -Recurse
 
