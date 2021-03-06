@@ -1,28 +1,30 @@
 # Contenu de Projet05_Valdin_Script01.ps1
-# Script permettant la création d'un utilisateur et d'un dossier partagé à son nom
+# Script permettant la crÃ©ation d'un utilisateur et d'un dossier partagÃ© Ã  son nom
 # AUTHEUR: Valdin Laurie, ACME Group
 # DATE: 01/03/2021
-# VERSION 1.0
+# VERSION 1.1
 
-$nom = Read-Host "Merci de rentrer le nom et prénom de l’utilisateur à créer"
+$nom = Read-Host "Merci de rentrer le nom et prÃ©nom de lâ€™utilisateur Ã  crÃ©er"
 
-$login = Read-Host "Merci de rentrer le login de l’utilisateur à créer"
+$login = Read-Host "Merci de rentrer le login de lâ€™utilisateur Ã  crÃ©er"
 
-$mdp = Read-Host "Merci de rentrer le mot de passe de l’utilisateur à créer"
+$mdp = Read-Host "Merci de rentrer le mot de passe de lâ€™utilisateur Ã  crÃ©er"
 
-$groupe = Read-Host "Merci d'indiquer le groupe dans lequel intégrer l’utilisateur"
+$groupe = Read-Host "Merci d'indiquer le groupe dans lequel intÃ©grer lâ€™utilisateur"
 
-# Création d'un nouvel utilisateur
+# CrÃ©ation d'un nouvel utilisateur
 New-ADUser -Name $nom -SamAccountName $login -UserPrincipalName $login@groupeacme.fr -AccountPassword (ConvertTo-SecureString -AsPlainText $mdp -Force) -PasswordNeverExpires $true -CannotChangePassword $true -Enabled $true
 
-# Intégration de l'utilisateur à un groupe pré-existant
+# IntÃ©gration de l'utilisateur Ã  un groupe prÃ©-existant
 Add-ADGroupMember -identity $groupe -Members $login
 
-# Création d'un dossier partagé à son nom
+# CrÃ©ation d'un dossier partagÃ© Ã  son nom
 New-Item -Name "$login" -Path "C:\SAV" -ItemType Directory
 
 New-SmbShare -Name "$login" -Path "C:\SAV\$login"
 
 Grant-SmbShareAccess -Name "$login" -AccountName "$login" -AccessRight Full
 
-Write-Host "Création de l’utilisateur et du dossier partagé réussie"
+Write-Host "CrÃ©ation de lâ€™utilisateur et du dossier partagÃ© rÃ©ussie"
+
+exit 0
