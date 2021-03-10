@@ -6,17 +6,17 @@
 
 $utilisateur = Read-Host "Merci de rentrer le prénom de l’utilisateur en question"
 
-$user = Get-AdUser -Identity $utilisateur -Properties MemberOf
+$users = Get-AdUser -Identity $utilisateur -Properties MemberOf
 
-foreach($u in $user) {
+foreach($user in $users) {
 
-    $nom = $u.name
+    $nom = $user.name
 
-    $membre = $u.memberof
+    $membre = $user.memberof
 
-    Add-Content -Path "Projet05_Valdin_AD03.txt" -Value $nom
+    Add-Content -Path "C:\Users\Administrateur\Desktop\Scripts\Projet05_Valdin_AD03.txt" -Value $nom
 
-    Add-Content -Path "Projet05_Valdin_AD03.txt" -Value $membre
+    Add-Content -Path "C:\Users\Administrateur\Desktop\Scripts\Projet05_Valdin_AD03.txt" -Value $membre
 
 }
 
