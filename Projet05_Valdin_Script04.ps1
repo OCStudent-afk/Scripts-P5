@@ -1,6 +1,6 @@
 # Contenu de Projet05_Valdin_Script04.ps1
 # Script de sauvegarde nocturne et quotidienne des documents des utilisateurs du domaine
-# AUTHEUR: Valdin Laurie, ACME Group
+# AUTEUR: Valdin Laurie, ACME Group
 # DATE: 01/03/2021
 # VERSION 1.1
 
