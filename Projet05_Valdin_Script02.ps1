@@ -1,6 +1,6 @@
 # Contenu de Projet05_Valdin_Script02.ps1
 # Script listant et exportant les membres d'un groupe en fichier .txt
-# AUTHEUR: Valdin Laurie, ACME Group
+# AUTEUR: Valdin Laurie, ACME Group
 # DATE: 01/03/2021
 # VERSION 1.1
 
