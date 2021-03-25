@@ -1,6 +1,6 @@
 # Contenu de Projet05_Valdin_Script01.ps1
 # Script permettant la création d'un utilisateur et d'un dossier partagé à son nom
-# AUTHEUR: Valdin Laurie, ACME Group
+# AUTEUR: Valdin Laurie, ACME Group
 # DATE: 01/03/2021
 # VERSION 1.1
 
